@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 
 //'declarations' modules (for app components)
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home.component';
 //import additional components here
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AppComponent } from './app.component';
         BrowserModule, FormsModule, routing, HttpModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        HomeComponent
         //insert components here
     ],
     bootstrap: [ AppComponent ]
