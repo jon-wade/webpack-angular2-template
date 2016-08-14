@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "A fullstack Angular2 template, using typescript on the backend",
   "scripts": {
-    "frontend": "webpack-dev-server --inline --progress --port 8080",
-    "test": "karma start",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install",
-    "backend": "tsc -w src/server.ts src/server/*.ts"
+    "frontend:start": "webpack-dev-server --inline --progress --port 8080",
+    "frontend:test": "karma start",
+    "frontend:build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "backend:compile": "tsc -outDir src/server/js -w src/server/*.ts",
+    "backend:start": "nodemon src/server/js/server.js",
+    "backend:test": "tsc -outDir src/server/js/test src/server/test/*.ts && mocha src/server/js/test"
   },
   "license": "MIT",
   "author": "Jon Wade",
